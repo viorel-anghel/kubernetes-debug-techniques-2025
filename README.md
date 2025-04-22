@@ -5,4 +5,11 @@
 - Author: Viorel Anghel (Vang) https://www.linkedin.com/in/viorelanghel/
 
 
+# kubectl get all
+
+```
+kubectl api-resources --namespaced --verbs=list  -o name | \
+  xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>
+
+```
 
