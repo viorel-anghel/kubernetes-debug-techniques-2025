@@ -1,0 +1,11 @@
+architecture: "replication"
+
+primary:
+  persistence:
+    size: 1Gi
+readReplicas:
+  persistence:
+    size: 1Gi
+
+
+
