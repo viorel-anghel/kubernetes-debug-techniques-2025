@@ -7,6 +7,12 @@ kubectl apply --server-side -f \
 # create a simple postgres cluster
 kubectl apply -f simple-pg.yaml 
 
+# use Controlled By on pods
+kubectl get pods
+kubectl describe pod simple-pg-1 | grep Controlled 
+kubectl get cluster
+kubectl describe cluster | grep API
+
 ```
 
 
