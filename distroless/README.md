@@ -22,6 +22,9 @@ kubectl debug -it -c debug --image=busybox go-http-server-657964647c-lfxxc
   ls -la /proc/7/root/
   exit
 
+# 'unpatch' the deployment to have it in the original state
+kubectl patch deploy go-http-server -p '{"spec": {"template": {"spec": {"shareProcessNamespace": false }}}}'
+
 # use copy-to to create another pod
 kubectl debug -it -c debug --image=busybox --share-processes --copy-to debug-pod go-http-server-7bb984744d-d7dhx  
 
